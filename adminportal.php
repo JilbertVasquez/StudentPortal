@@ -29,7 +29,7 @@
                     <form action="includes/adminlogin.inc.php" class="d-flex flex-column justify-content-center align-items-center" method="POST">
                         <input type="username" class="username-input rounded" placeholder= "username" name="username">
                         <input type="pwd" class="pwd-input rounded" placeholder="password" name="pwd">
-                        <button type="submit" class="btn rounded mt-4 text-uppercase">login</button>
+                        <button type="submit" name="submit" class="btn rounded mt-4 text-uppercase">login</button>
                     </form>
                     <p class="forgot text-uppercase">forgot password? <a href="#">click here</a></p>
             </div>

@@ -1,6 +1,6 @@
 <?php 
 
-include "adminlogin.classes.php";
+// include "adminlogin.classes.php";
 
 class AdminLoginContr {
     private $username;
@@ -11,7 +11,7 @@ class AdminLoginContr {
         $this->pwd = $pwd;
     }
 
-    public function LOGINADMIN() {
+    public function loginAdmin() {
         if ($this->emptyInput() == false) {
             header("location: ../adminportal.php?error=emptyInput");
             exit();
@@ -24,53 +24,27 @@ class AdminLoginContr {
 
         if ($this->accMatch() == false) {
             header("location: ../adminportal.php?error=accountNotFound");
+            exit();
         }
 
-        $this->loginAdmin($this->username, $this->pwd);
+        session_start();
+        $_SESSION["username"] = $this->username;
 
         header("location: ../index.php?login=success");
         exit();
-
     }
 
     private function emptyInput() {
-        $result = true;
-
-        if(empty($this->username) || empty($this->pwd)) {
-            $result = false;
-        }
-        else {
-            $result = true;
-        }
-
-        return $result;
+        return !empty($this->username) && !empty($this->pwd);
     }
 
     private function invalidUsername() {
-        $result = false;
-        if (!preg_match("/^[a-zA-Z0-9]*$/", $this->username)) {
-            $result = false;
-        }
-        else {
-            $result = true;
-        }
-
-        return $result;
+        return preg_match("/^[a-zA-Z0-9]*$/", $this->username);
     }
 
-    private function accMatch () {
+    private function accMatch() {
         $adminlogin = new AdminLogin();
-        $result = false;
-
-        if (!$adminlogin->checkUser($this->username, $this->pwd)) {
-            $result = true;
-        }
-        else {
-            $result = false;
-        }
-
-        return $result;
+        return $adminlogin->loginAdmin($this->username, $this->pwd);
     }
-
 }
-
+?>

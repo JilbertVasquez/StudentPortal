@@ -6,7 +6,7 @@ class Dbh {
         try {
             $dsn = "mysql:host=localhost; port=3307; dbname=audatabase";
             $username = "root";
-            $pwd = "root";
+            $pwd = "";
 
             $dbh = new PDO($dsn, $username, $pwd);
             return $dbh;
