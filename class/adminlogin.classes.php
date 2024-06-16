@@ -1,7 +1,7 @@
 <?php
 
 class AdminLogin extends Dbh {
-    protected function checkUser($username, $pwd) {
+    public function checkUser($username, $pwd) {
         $stmt = $this->connect()-> prepare('SELECT * FROM audatabase WHERE username = ? AND pwd = ?;');
 
         if (!$stmt->execute(array($username, $pwd))) {
