@@ -11,7 +11,7 @@ class AdminLoginContr {
         $this->pwd = $pwd;
     }
 
-    public function loginUser() {
+    public function LOGINADMIN() {
         if ($this->emptyInput() == false) {
             header("location: ../index.php?error=emptyInput");
             exit();
@@ -21,6 +21,13 @@ class AdminLoginContr {
             header("location: ../index.php?error=invalidUsername");
             exit();
         }
+
+        if ($this->accMatch() == false) {
+            header("location: ../index.php?error=accountNotFound");
+        }
+
+        $this->loginAdmin($this->username, $this->pwd);
+
     }
 
     private function emptyInput() {
@@ -52,7 +59,7 @@ class AdminLoginContr {
         $adminlogin = new AdminLogin();
         $result = false;
 
-        if ($adminlogin->checkUser($this->username, $this->pwd)) {
+        if (!$adminlogin->checkUser($this->username, $this->pwd)) {
             $result = true;
         }
         else {
