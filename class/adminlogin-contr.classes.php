@@ -13,20 +13,23 @@ class AdminLoginContr {
 
     public function LOGINADMIN() {
         if ($this->emptyInput() == false) {
-            header("location: ../index.php?error=emptyInput");
+            header("location: ../adminportal.php?error=emptyInput");
             exit();
         }
 
         if ($this->invalidUsername() == false) {
-            header("location: ../index.php?error=invalidUsername");
+            header("location: ../adminportal.php?error=invalidUsername");
             exit();
         }
 
         if ($this->accMatch() == false) {
-            header("location: ../index.php?error=accountNotFound");
+            header("location: ../adminportal.php?error=accountNotFound");
         }
 
         $this->loginAdmin($this->username, $this->pwd);
+
+        header("location: ../index.php?login=success");
+        exit();
 
     }
 

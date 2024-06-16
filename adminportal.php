@@ -26,7 +26,7 @@
         <div class="container4 bg-light d-flex justify-content-center align-items-center" >
             <div class="inner-div d-flex bg-light rounded flex-column">
                 <h4 class=" login-label text-uppercase">login</h4>
-                    <form action="" class="d-flex flex-column justify-content-center align-items-center" method="POST">
+                    <form action="includes/adminlogin.inc.php" class="d-flex flex-column justify-content-center align-items-center" method="POST">
                         <input type="username" class="username-input rounded" placeholder= "username" name="username">
                         <input type="pwd" class="pwd-input rounded" placeholder="password" name="pwd">
                         <button type="submit" class="btn rounded mt-4 text-uppercase">login</button>

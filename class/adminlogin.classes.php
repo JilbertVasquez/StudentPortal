@@ -26,24 +26,25 @@ class AdminLogin extends Dbh {
 
         if (!$stmt->execute(array($username, $pwd))) {
             $stmt = null;
-            header ("location: ../index.php?error=stmtfailed");
+            header ("location: ../adminportal.php?error=stmtfailed");
             exit();
         }
 
         if ($stmt->rowCount() == 0) {
             $stmt = null;
-            header("location: ../index.php?error=userNotFound");
+            header("location: ../adminportal.php?error=userNotFound");
             exit();
         }
 
         $dhbpwd = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $checkpwd = password_verify($pwd, $dhbpwd[0]['pwd']);
 
-        $admin = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        
-        session_start();
-        $_SESSION['username'] = $admin[0]['username'];
+        if ($checkpwd == false) {
+            $stmt = null;
+            header("location: ../adminportal.php?error=wrongPassword");
+            exit();
+        }
 
-        $stmt = null;
+        return true;
     }
 }

@@ -4,13 +4,14 @@ if (isset($_POST["submit"])) {
     $username = $_POST['username'];
     $pwd = $_POST['pwd'];
 
-    include "../dbh.classes.php";
-    include "../classes/adminlogin.classes.php";
-    include "../classes/adminlogin-contr.classes.php";
+    include "../class/dbh.classes.php";
+    include "../class/adminlogin.classes.php";
+    include "../class/adminlogin-contr.classes.php";
 
     $adminlogin = new AdminLoginContr($username, $pwd);
 
     $adminlogin->LOGINADMIN();
 
-    header("location: ../index.php?error=none");
+    // header("location: ../index.php?error=none");
+    header("location: ../adminlogin.php?login=success");
 }
