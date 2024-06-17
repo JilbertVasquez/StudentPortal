@@ -1,3 +1,15 @@
 .section1 {
     height: 100vh;
 }
+
+.admin-header-1, .admin-header-2 {
+    font-weight: 400;
+}
+
+.dashboard {
+    height: auto;
+}
+
+.students-btn {
+    width: 100%;
+}
