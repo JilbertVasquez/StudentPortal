@@ -1,0 +1,39 @@
+* {
+    font-family: 'Nunito Sans';
+}
+
+.options {
+    height: 100vh;
+}
+
+.head {
+    height: 8%;
+    background-color: #A79277;
+}
+
+.mydrive {
+    width: 82%;
+    height: 100vh;
+}
+
+.alien-pic {
+    width: auto;
+    height: 60%;
+}
+
+.university {
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 20px;
+}
+
+.buttons {
+    background-color: #F8F4E1;
+    height: 92%;
+}
+
+.buttons button {
+    font-size: 18px;
+    font-weight: 400;
+}
+

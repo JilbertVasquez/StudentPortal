@@ -2,9 +2,9 @@
 
 class AdminLogin extends Dbh {
     public function loginAdmin($username, $pwd) {
-        $stmt = $this->connect()->prepare('SELECT * FROM admin WHERE username = ?');
+        $stmt = $this->connect()->prepare('SELECT * FROM admin WHERE username = ? AND pwd = ?');
 
-        if (!$stmt->execute(array($username))) {
+        if (!$stmt->execute(array($username, $pwd))) {
             $stmt = null;
             header("location: ../adminportal.php?error=stmtfailed");
             exit();
