@@ -1,3 +1,3 @@
-<section class="section1 bg-danger">
-    
+<section class="section2 bg-danger">
+
 </section>
