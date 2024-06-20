@@ -1,8 +1,8 @@
 <?php
 
-class AdminDasboard extends Dbh {
+class AdminDashboard extends Dbh {
     public function countStudents() {
-        $stmt = $this->connect()->prepare('SELECT COUNT(*) FROM admin');
+        $stmt = $this->connect()->prepare('SELECT COUNT(*) as count FROM admin');
 
         if (!$stmt->execute()) {
             $stmt = null;

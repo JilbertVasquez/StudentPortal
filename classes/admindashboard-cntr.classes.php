@@ -10,7 +10,7 @@ class AdminDashboardCntr {
     }
 
     private function studentTotal() {
-        $admindashboard = new AdminDasboard();
+        $admindashboard = new AdminDashboard();
         return $admindashboard->countStudents();
     }
 }
