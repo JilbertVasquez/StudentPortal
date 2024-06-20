@@ -19,12 +19,12 @@
         </section>
         <section class="col-md-3 bg-primary rounded">
             <h1 class="d-flex justify-content-end px-4 align-items-center pt-4"><?php echo $studentCount; ?></h1>
-            <h5 class="d-flex justify-content-end px-4 text-uppercase align-items-center pb-3">total users</h5>
+            <h5 class="d-flex justify-content-end px-4 text-uppercase align-items-center pb-4">total users</h5>
             <button class="students-btn btn d-flex justify-content-between px-4 text-uppercase rounded"><h5>All Users</h5><h5>-></h5></button>
         </section>
         <section class="col-md-3 bg-primary rounded">
             <h3 class="d-flex justify-content-end px-4 align-items-center pt-3 text-uppercase">Welcome</h3>
-            <h5 class="d-flex justify-content-end px-4 text-uppercase align-items-center pb-2 col-md-6">Vasquez, Jilbert S.</h5>
+            <h5 class="d-flex justify-content-start px-4 text-uppercase align-items-center pb-4 pt-4"><?php echo $currentLoginAdmin; ?></h5>
             <button class="students-btn btn d-flex justify-content-between px-4 text-uppercase rounded"><h5>User Account</h5><h5>-></h5></button>
         </section>
     </section>

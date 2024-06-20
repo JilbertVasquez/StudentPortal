@@ -1,7 +1,5 @@
 <?php 
 
-// include "adminlogin.classes.php";
-
 class AdminLoginContr {
     private $username;
     private $pwd;
@@ -30,7 +28,7 @@ class AdminLoginContr {
         session_start();
         $_SESSION["username"] = $this->username;
 
-        header("location: ../index.php?login=success");
+        header("location: ../admin.php?login=success");
         exit();
     }
 

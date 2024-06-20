@@ -15,5 +15,22 @@ class AdminDashboard extends Dbh {
 
         return $count;
     }
+
+    public function adminName() {
+        session_start();
+        $username = $_SESSION['username'];
+        $stmt = $this->connect()->prepare('SELECT username FROM admin WHERE username = ?');
+
+        if (!$stmt->execute(array($username))) {
+            $stmt = null;
+            header("location: ../adminportal.php?error=stmtfailed");
+            exit();
+        }
+
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        $name = $result['username'];
+
+        return $name;
+    }
 }
 ?>

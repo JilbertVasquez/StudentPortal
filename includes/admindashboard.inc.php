@@ -5,4 +5,6 @@ include realpath(__DIR__ . '/../classes/admindashboard-cntr.classes.php');
 
 $adminDashboardCntr = new AdminDashboardCntr();
 $studentCount = $adminDashboardCntr->studentCount();
+
+$currentLoginAdmin = $adminDashboardCntr->adminNameLogin();
 ?>

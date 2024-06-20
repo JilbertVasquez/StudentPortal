@@ -23,7 +23,10 @@
             <button class="btn text-uppercase mt-1 mb-2 w-50 mx-auto">All Students</button>
             <button class="btn text-uppercase mt-1 mb-2 w-50 mx-auto">All Users</button>
             <button class="btn text-uppercase mt-1 mb-2 w-50 mx-auto">User Profile</button>
-            <button class="btn text-uppercase mt-1 mb-2 w-50 mx-auto">Logout</button>
+            <!-- <button class="btn text-uppercase mt-1 mb-2 w-50 mx-auto">Logout</button> -->
+            <form action="includes/logout.inc.php" method="post">
+                <button type="submit" class="btn text-uppercase mt-1 mb-2 w-50 mx-auto">Logout</button>
+            </form>
         </nav>
     </section>
     
